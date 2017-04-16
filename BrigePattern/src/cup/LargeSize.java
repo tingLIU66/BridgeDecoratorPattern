@@ -1,23 +1,10 @@
 package cup;
 
-public class LargeSize extends Cups{
+public class LargeSize implements Cups{
 	
 	protected float pricerate;
 	
 	
-
-	public float getPricerate() {
-		return pricerate;
-	}
-
-
-
-	public void setPricerate(float pricerate) {
-		this.pricerate = pricerate;
-	}
-
-
-
 	@Override
 	public String ChooseSize() {
 		

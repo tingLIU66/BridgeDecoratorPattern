@@ -1,6 +1,6 @@
 package cup;
 
-public abstract class Cups {
+public interface Cups {
 	
 	public abstract String ChooseSize();
 	public abstract float pricerate();
