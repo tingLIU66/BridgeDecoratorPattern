@@ -29,6 +29,14 @@ public class Client {
 		drink.SetCups(new SmallSize());		
 		drink.OrderDrink(1);	
 		drinks.add(drink);
+		
+		drink = new Coffee();	
+		drink.setDrinkname("coffee");
+		((Coffee) drink).setAddmilk("Ad milk");
+		drink.setPrice(2.5f);
+		drink.SetCups(new LargeSize());		
+		drink.OrderDrink(1);	
+		drinks.add(drink);
 
 		
 		drink = new Tea();
