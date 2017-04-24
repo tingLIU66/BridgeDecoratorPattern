@@ -22,6 +22,7 @@ public class Client {
 		
 		List<Drink> drinks= new ArrayList<Drink>();
 		float orderTotal = 0f;
+	
 		
 		Drink drink1 = new Coffee();					
 		//begin decorating coffee
@@ -37,7 +38,7 @@ public class Client {
 		
 		drink2 = new Chocolate(drink2);
 		drink2.SetCups(new LargeSize());	
-		drink2.OrderDrink(1);	
+		drink2.OrderDrink(2);	
 		drinks.add(drink2);
 
 		
@@ -65,7 +66,7 @@ public class Client {
 		    orderTotal = orderTotal + drink0.cost()* drink0.getQty();*/
 		    
 		    
-        	System.out.printf("\t\t\t%-50s %-15s %-10s %-10s%n", 
+        	System.out.printf("\t\t\t%-40s %-15s %-10s %-10s%n", 
         					drink0.getDrinkdescription(), 
         					drink0.getSize(), 
         					"x" + drink0.getQty(), 
