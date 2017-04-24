@@ -1,2 +1,6 @@
-# BridgePattern
+﻿# BridgeDecoratorPattern
 This app is an online Drink Store which sells different kind of drinks with different sizes of cups. It uses a bridge pattern to “decouple an abstraction from its implementation so that the two can vary independently”. Here the abstract class Drink is the abstraction and the interface Cups is the implementer. When it is necessary to add another kind of drink, like Milk, we only add a Milk class to inherit the abstract class Drink, don’t need to change other part of the code. The same to Drink, if we need to add another kind of Cups, like a HolidayTheme cup, just add a class to implement the interface Cups.
+
+Plus, this app also use Decorator pattern to implement adding condiments into a cup of coffee.Such as Cream, Sugar, Chocolate and so on. 
+Concrete Decorators extend Drink, so they are the same type to the Drink class. Every time when a drink is wrapped by a decorator(condiment), the getDrinkDescription() method in decorator adds the decorator's description into the drink's description and the Cost() method calculates the total cost of the drink and contiment. 
+Decorator pattern allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class. So we can decorate objects dynamically with as many decorators as we like. Just adding new decorator ass to wrap the original class when needed.
