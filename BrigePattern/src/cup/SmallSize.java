@@ -16,7 +16,7 @@ public class SmallSize implements Cups{
 	@Override
 	public float pricerate() {
 		
-		return pricerate = 0.7f;
+		return pricerate = 0.8f;
 	}
 
 }

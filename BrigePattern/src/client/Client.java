@@ -3,7 +3,9 @@ package client;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import coffeeDeco.Chocolate;
+import coffeeDeco.Cream;
+import coffeeDeco.Sugar;
 import cup.LargeSize;
 import cup.MediumSize;
 import cup.SmallSize;
@@ -20,40 +22,33 @@ public class Client {
 		
 		List<Drink> drinks= new ArrayList<Drink>();
 		float orderTotal = 0f;
+		
+		Drink drink1 = new Coffee();					
+		//begin decorating coffee
+		drink1 = new Cream(drink1);
+		drink1 = new Sugar(drink1);
+		//bridge pattern to connect the cupsize
+		drink1.SetCups(new SmallSize());		
+		drink1.OrderDrink(1);	
+		drinks.add(drink1);
+		
+		Drink drink2 = new Coffee();	
+		
+		drink2 = new Chocolate(drink2);
+		drink2.SetCups(new LargeSize());	
+		drink2.OrderDrink(1);	
+		drinks.add(drink2);
 
-		Drink drink;		
-		drink = new Coffee();	
-		drink.setDrinkname("coffee");
-		((Coffee) drink).setAddmilk("No milk");
-		drink.setPrice(2.5f);
-		drink.SetCups(new SmallSize());		
-		drink.OrderDrink(1);	
-		drinks.add(drink);
 		
-		drink = new Coffee();	
-		drink.setDrinkname("coffee");
-		((Coffee) drink).setAddmilk("Ad milk");
-		drink.setPrice(2.5f);
-		drink.SetCups(new LargeSize());		
-		drink.OrderDrink(1);	
-		drinks.add(drink);
-
+		Drink drink3 = new Tea();
+		drink3.SetCups(new MediumSize());		
+		drink3.OrderDrink(2);
+		drinks.add(drink3);
 		
-		drink = new Tea();
-		drink.setDrinkname("Tea");
-		((Tea) drink).setTeatype("Jasmine");
-		drink.setPrice(2.0f);
-		drink.SetCups(new MediumSize());		
-		drink.OrderDrink(2);
-		drinks.add(drink);
-		
-		drink = new SoftDrink();
-		drink.setDrinkname("Cocca");
-		((SoftDrink) drink).setBrand("Pepsi");
-		drink.setPrice(3.0f);
-		drink.SetCups(new LargeSize());		
-		drink.OrderDrink(3);
-		drinks.add(drink);
+		Drink drink4 = new SoftDrink();
+		drink4.SetCups(new LargeSize());		
+		drink4.OrderDrink(3);
+		drinks.add(drink4);
 		
 		
 				
@@ -63,20 +58,12 @@ public class Client {
         System.out.println("\tOrder Items: ");
         for (Drink drink0 : drinks) {
         	
-        	System.out.print("\t\t\t" + drink0.getDrinkname()+ "\t\t" );
+        	System.out.print("\t\t\t" + drink0.getDrinkdescription()+ " " );
 
-        			    if( drink0 instanceof Coffee)
-        			    	System.out.print(((Coffee) drink0).getAddmilk()+"\t\t");
         			    		 
-        			     else if ( drink0 instanceof Tea)
-        			    	System.out.print(((Tea) drink0).getTeatype()+"\t\t");
-        			    
-        			    else if ( drink0 instanceof SoftDrink)
-							System.out.print(((SoftDrink) drink0).getBrand()+"\t\t");
-        			    		 
-		    System.out.println(	drink0.getSize()+ "\t\t" + "x" + drink0.getQty() + "\t\t" + "$" + drink0.getTotalPrice()* drink0.getQty());
+		    System.out.println(	drink0.getSize()+ "\t\t" + "x" + drink0.getQty() + "\t\t" + "$" + drink0.cost()* drink0.getQty()* drink0.getPricerate());
 		    
-		    orderTotal = orderTotal + drink0.getTotalPrice()* drink0.getQty();
+		    orderTotal = orderTotal + drink0.cost()* drink0.getQty();
            	
            	
         }

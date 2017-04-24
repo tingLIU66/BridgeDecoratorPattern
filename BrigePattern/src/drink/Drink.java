@@ -1,14 +1,10 @@
 package drink;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 import cup.Cups;
 
 public abstract class Drink {
 	
-	protected String drinkname;	
+	protected String drinkdescription = "Unknown Drink";	
 	protected float price;	
 	protected Cups cupsize;
 	protected int qty;
@@ -16,24 +12,24 @@ public abstract class Drink {
 	
 	
 	
-	public String getDrinkname() {
-		return drinkname;
+	public String getDrinkdescription() {
+		return drinkdescription;
 	}
 
 
-	public void setDrinkname(String drinkname) {
-		this.drinkname = drinkname;
+	public void setDrinkdescription(String drinkdescription) {
+		this.drinkdescription = drinkdescription;
 	}
 
 
-	public float getPrice() {
+	/*public float getPrice() {
 		return price;
 	}
 
 
 	public void setPrice(float price) {
 		this.price = price;
-	}
+	}*/
 
 
 	public void SetCups(Cups cupsize){
@@ -48,9 +44,7 @@ public abstract class Drink {
 		return cupsize.ChooseSize();	
 		
 	}
-	
-	
-	
+
 	public int getQty() {
 		return qty;
 	}
@@ -61,13 +55,18 @@ public abstract class Drink {
 	}
 
 
-	public float getTotalPrice(){
+	public float getPricerate(){
 		
-		return getPrice() * cupsize.pricerate();	
+		return cupsize.pricerate();	
 		
 	}
+	
+	public abstract float cost();
 
 	
-	public abstract void OrderDrink(int qty);
+	public void OrderDrink(int qty){
+		
+		setQty(qty);
+	}
 	
 }

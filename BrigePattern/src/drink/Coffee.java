@@ -4,27 +4,15 @@ import java.util.List;
 
 public class Coffee extends Drink{
 	
-	protected String addmilk;
-	
-	
-
-	public String getAddmilk() {
-		return addmilk;
-	}
-
-
-
-	public void setAddmilk(String addmilk) {
-		this.addmilk = addmilk;
-	}
-
+ public Coffee() {
+	 
+	 this.drinkdescription = "Coffee";
+ }
 
 
 	@Override
-	public void OrderDrink(int qty) {	
-	
-		super.setQty(qty);
-		
+	public float cost() {
+		return 2.0f;
 	}
 
 }

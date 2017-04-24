@@ -2,27 +2,16 @@ package drink;
 
 public class Tea extends Drink{
 	
-	protected String teatype;
-	
-	
-
-	public String getTeatype() {
-		return teatype;
-	}
+	public Tea() {
+		 
+		 this.drinkdescription = "Tea";
+	 }
 
 
 
-	public void setTeatype(String teatype) {
-		this.teatype = teatype;
-	}
-
-
-
-	@Override
-	public void OrderDrink(int qty) {
-		
-		super.setQty(qty);
-	
-	}
+		@Override
+		public float cost() {
+			return 2.0f;
+		}
 
 }
