@@ -27,6 +27,7 @@ public class Client {
 		//begin decorating coffee
 		drink1 = new Cream(drink1);
 		drink1 = new Sugar(drink1);
+		//drink1 = new Chocolate(drink1);
 		//bridge pattern to connect the cupsize
 		drink1.SetCups(new SmallSize());		
 		drink1.OrderDrink(1);	
@@ -52,29 +53,35 @@ public class Client {
 		
 		
 				
-		System.out.println("-------------------------------Welcome to Ting's coffee--------------------------------------");
+		System.out.println("---------------------------------------Welcome to Ting's coffee----------------------------------------------");
 		System.out.println();
 		
         System.out.println("\tOrder Items: ");
         for (Drink drink0 : drinks) {
         	
-        	System.out.print("\t\t\t" + drink0.getDrinkdescription()+ " " );
-
-        			    		 
-		    System.out.println(	drink0.getSize()+ "\t\t" + "x" + drink0.getQty() + "\t\t" + "$" + drink0.cost()* drink0.getQty()* drink0.getPricerate());
+        	/*System.out.println("\t\t\t" + drink0.getDrinkdescription()+ "\t\t" + drink0.getSize()+ "\t\t" 
+        	        			+ "x" + drink0.getQty() + "\t\t" + "$" + drink0.cost()* drink0.getQty()* drink0.getPricerate());
 		    
-		    orderTotal = orderTotal + drink0.cost()* drink0.getQty();
-           	
+		    orderTotal = orderTotal + drink0.cost()* drink0.getQty();*/
+		    
+		    
+        	System.out.printf("\t\t\t%-50s %-15s %-10s %-10s%n", 
+        					drink0.getDrinkdescription(), 
+        					drink0.getSize(), 
+        					"x" + drink0.getQty(), 
+        					"$" + drink0.cost()* drink0.getQty()* drink0.getPricerate());
+
+        			orderTotal = orderTotal + drink0.cost()* drink0.getQty();
            	
         }
-		
 			
 		
         System.out.println("\n\tOrder Total:\t" + "$" +  orderTotal);
 		
-        System.out.println("\n---------------------------------------------------------------------------------------------");
-		
+        System.out.println("\n-------------------------------------------------------------------------------------------------------------");
+        
+	}
 		
 	}
 
-}
+

@@ -5,7 +5,6 @@ import cup.Cups;
 public abstract class Drink {
 	
 	protected String drinkdescription = "Unknown Drink";	
-	protected float price;	
 	protected Cups cupsize;
 	protected int qty;
 	
@@ -20,16 +19,6 @@ public abstract class Drink {
 	public void setDrinkdescription(String drinkdescription) {
 		this.drinkdescription = drinkdescription;
 	}
-
-
-	/*public float getPrice() {
-		return price;
-	}
-
-
-	public void setPrice(float price) {
-		this.price = price;
-	}*/
 
 
 	public void SetCups(Cups cupsize){
